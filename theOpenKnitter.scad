@@ -1,3 +1,15 @@
+/*
+
+theOpenKnitter v0.01.091018.01
+
+    Sebastian Figueroa C.
+
+Github:
+    @theOpenSprocketproject
+Twitter:
+    @sebanfica
+*/
+
 //-- Total work facet number
 $fn=100;
 //-- Serial hull for complex shapes
