@@ -1,5 +1,5 @@
 /*
-theOpenKnitter v0.01.091018.09
+theOpenKnitter v0.01.091018.10
 
     Sebastian Figueroa C.
 
@@ -12,8 +12,7 @@ Twitter:
 //-- Total work facet number
 $fn=100;
 
-//-- Needle ---------------------------------------------------//
-
+//-- Needle --------------------------------------------------//
 color("black"){
 nh=100;//needle total height
 wn=2; //width needle
@@ -67,10 +66,10 @@ cylinder(r=wn/2, h=wn, center=true);
 }
 } //Union
 }
-//-- Needle END -----------------------------------------------//
+//-- Needle END ----------------------------------------------//
 
-//-- Thread Slipper -------------------------------------------//
-
+//-- Thread Slipper ------------------------------------------//
+union(){
 difference(){
 rotate([90,0,0]){
 minkowski(){
@@ -85,11 +84,60 @@ cube(22);
 }
 translate([-3.5,0,-1.5])
 cube([7,4,3], center=true);
-
+}
 //-- Thread Slipper END ---------------------------------------//
 
 //-- Chain stitch holder
+difference(){
 translate([-3,3+0.5,0])
 cube([2,1,6], center=true);
+translate([-2,3.5,3])
+
+difference(){ //Sacado de Chain stitch holder
+rotate([90,0,0])
+cylinder(r=4/2,h=1.5, center=true);
+
+union(){
+hull(){
+translate([-1,0,-1])
+rotate([90,0,0])
+cylinder(r=2/2,h=2, center=true);
+
+translate([-3,0,-1])
+rotate([90,0,0])
+cylinder(r=2/2,h=2, center=true);
+
+translate([-1,0,-3])
+rotate([90,0,0])
+cylinder(r=2/2,h=2, center=true);
+}
+}//difference
+}
+}
+
+difference(){
 translate([-3,6.5,0])
 cube([2,1,6], center=true);
+
+translate([-2,6.5,3])
+difference(){ //Sacado de Chain stitch holder
+rotate([90,0,0])
+cylinder(r=4/2,h=1.5, center=true);
+
+union(){
+hull(){
+translate([-1,0,-1])
+rotate([90,0,0])
+cylinder(r=2/2,h=2, center=true);
+
+translate([-3,0,-1])
+rotate([90,0,0])
+cylinder(r=2/2,h=2, center=true);
+
+translate([-1,0,-3])
+rotate([90,0,0])
+cylinder(r=2/2,h=2, center=true);
+}
+}//difference
+}
+}
